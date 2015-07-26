@@ -29,24 +29,24 @@ if can_tweet():
 class AdminPostForm(forms.ModelForm):
 
     title = forms.CharField(
-        _("Title"),
+        label=_("Title"),
         max_length=90,
         widget=forms.TextInput(attrs={"style": "width: 50%;"}),
     )
     slug = forms.CharField(
-        _("Slug"),
+        label=_("Slug"),
         widget=forms.TextInput(attrs={"style": "width: 50%;"})
     )
     teaser = forms.CharField(
-        _("Teaser"),
+        label=_("Teaser"),
         widget=forms.Textarea(attrs={"style": "width: 80%;"}),
     )
     content = forms.CharField(
-        _("Content"),
+        label=_("Content"),
         widget=forms.Textarea(attrs={"style": "width: 80%; height: 300px;"})
     )
     description = forms.CharField(
-        _("Description"),
+        label=_("Description"),
         widget=forms.Textarea(attrs={"style": "width: 80%;"}),
         required=False
     )
@@ -54,7 +54,7 @@ class AdminPostForm(forms.ModelForm):
         tweet = forms.BooleanField(
             required=False,
             help_text=_("Checking this will send out a tweet for this post"),
-            verbose_name=_("Can tweet?"),
+            label=_("Can tweet?"),
         )
 
     class Meta:
